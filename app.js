@@ -37,11 +37,11 @@ nameForm.addEventListener('submit', (e) => {
     // set the state to this data from the form
     name1 = data.get('team-one');
     name2 = data.get('team-two');
-    console.log(name1, name2);
+    // console.log(name1, name2);
 
 
     // reset the form values
-    // nameForm.reset()
+    nameForm.reset();
 
     displayCurrentGameEl();
 });
@@ -50,7 +50,7 @@ nameForm.addEventListener('submit', (e) => {
 teamOneAddButton.addEventListener('click', () => {
     // increment the current state for team one's score
     score1++;
-    console.log(score1);
+    // console.log(score1);
     displayCurrentGameEl();});
     
 teamTwoAddButton.addEventListener('click', () => {
@@ -62,7 +62,7 @@ teamTwoAddButton.addEventListener('click', () => {
 teamOneSubtractButton.addEventListener('click', () => {
     // decrement the current state for team one's score
     score1--;
-    console.log(score1);
+    // console.log(score1);
     displayCurrentGameEl();
 });
 
@@ -85,7 +85,7 @@ finishGameButton.addEventListener('click', () => {
     ;
     // console.log();
     pollArr.push(gameObj);
-    console.log(pollArr, 'final arr');
+    // console.log(pollArr, 'final arr');
     // HINT: it will be helpful to keep track of these games as objects with 4 properties, one for each piece of state we're tracking
 
     displayAllGames();
@@ -93,13 +93,17 @@ finishGameButton.addEventListener('click', () => {
     // reset the initial state to start with a new form
     
     displayCurrentGameEl();
-    // nameForm.reset()
-    // score1 = 0
-    // score2 = 0
-
-    nameForm.reset()
+    // nameForm.reset();
     score1 = 0;
     score2 = 0;
+
+
+    // let resetObj = {
+    //     name1: '',
+    //     name2: '',
+    //     score1: '',
+    //     score2: ''
+    // }
 });
 
 
@@ -147,11 +151,11 @@ function displayAllGames() {
     // render and append a past game for each past game in state
 
     for (let game of pollArr) {
-        console.log(game, 'loop of all games');
+        // console.log(game, 'loop of all games');
         let games = renderGame(game);
-        console.log(games, '------ this is our games ------');
+        // console.log(games, '------ this is our games ------');
         pastGamesEl.append(games);
-        console.log(pastGamesEl);
+        // console.log(pastGamesEl);
 
         // pastGamesEl.append(currentGameEl)
     }
